@@ -100,8 +100,8 @@ console.log("outside")
     }
   }
 
-  // console.log("result1", result1);
-  // console.log("result2", result2);
+  console.log("result1", result1);
+  console.log("result2", result2);
   console.log("mainresult", mainresult);
 };
 

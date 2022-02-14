@@ -1,38 +1,4 @@
-// const twoSum = function (nums, target) {
 
-//   for (let i = 0; i < nums.length; i++) {
-//         for (let j=i+1; j<nums.length; j++){
-//             if (nums[i] + nums[j] == target){
-//                 return [i, j]
-//             }
-//         }
-//   }
-// };
-
-// console.log("result", twoSum([1, 2, 4]), 3);
-// [3,2,4], 6
-
-// const addDigits = function(num) {
-
-//     let numstr = String(num)
-//     let numArr = numstr.split("")
-//     let newArr = []
-//     let sum = 0
-
-//     for (let i=0; i<numArr.length; i++){
-//         newArr.push(Number(numArr[i]))
-//         sum += newArr[i]
-//     }
-
-//     if (sum <= 9){
-//        return sum
-//     } else {
-//        return addDigits(sum)
-//     }
-
-// };
-
-// console.log("answer", addDigits(8));
 
 // let str = "Bob is a great guy"
 // let splitedStr = str.split(" ")
@@ -330,7 +296,7 @@
 // console.log("res", isPalindrome(-979));
 
 
-let bracket = "((())"
-// let bracket = "()((()()"
+// let bracket = "((())"
+// // let bracket = "()((()()"
 
-console.log("bracket", bracket.split(")"));
+// console.log("bracket", bracket.split(")"));

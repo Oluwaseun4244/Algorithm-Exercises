@@ -87,17 +87,19 @@ const arrDiff = (arr1, arr2) => {
   unfold(arr1);
   unfold1(arr2);
 
-  for(let i = 0; i < result1.length; i++) {
+  for (let i = 0; i < result1.length; i++) {
     if (!result2.includes(result1[i])) {
-      console.log("reach here?")
       mainresult.push(result1[i]);
     }
   }
-console.log("outside")
-  for(let i = 0; i < result2.length; i++) {
-    if (!result1.includes(result2[i])) {
+
+  for (let i = 0; i < result2.length; i++) {
+    if (result1.indexOf(result2[i]) < 0) {
       mainresult.push(result2[i]);
     }
+    // if (!result1.includes(result2[i])) {
+    //   mainresult.push(result2[i]);
+    // }
   }
 
   console.log("result1", result1);
@@ -106,5 +108,4 @@ console.log("outside")
 };
 
 // arrDiff([1, 2, 3, 4, 5], [1, [2], [3, [[4]]], [5, 6]]);
-arrDiff([1, 2, 3], [100, 2, 1, 10])
-
+arrDiff([1, 2, 3], [100, 2, 1, 10]);

@@ -29,25 +29,6 @@
 //   capFirstLetter("This is ali, ali is simibi brother")
 // );
 
-// const findMedianSortedArrays = function (nums1, nums2) {
-//   let concatenation = nums1.concat(nums2);
-//   let sorting = concatenation.sort((a, b) => a - b);
-
-//   let checking = sorting.length / 2;
-//   let check2 = sorting.length % 2;
-
-//   if (check2 == 0) {
-//     let a = sorting[checking - 1];
-//     let b = sorting[checking];
-
-//     return (a + b) / 2;
-//   } else {
-//     Median = sorting[Math.floor(checking)];
-//     return Median;
-//   }
-// };
-
-// console.log(findMedianSortedArrays([1, 2, 3], [4, 6, 7]));
 
 // const addTwoNumbers = function (l1, l2) {
 //   let arr1 = [];
@@ -77,34 +58,7 @@
 // console.log(addTwoNumbers([2,4,3], [5,6,4]));
 // console.log(addTwoNumbers([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9]));
 
-// const longestPalindrome = function (s) {
-//   let pal = [];
-//   let reverse = [];
-//   let result = "";
 
-//   for (let i = 0; i < s.length; i++) {
-//     for (let j = i + 1; j <= s.length; j++) {
-//       pal = s.substring(i, j).split("");
-//       reverse = pal;
-//       if (
-//         pal.join("") === reverse.reverse().join("") &&
-//         pal.length > result.length
-//       ) {
-//         result = reverse;
-//       }
-//     }
-//   }
-
-//   return result.join("");
-// };
-
-// console.log(
-//   "result",
-//   longestPalindrome(
-//     "jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx"
-//   )
-// );
-// console.log("result", longestPalindrome("babada"));
 
 // function addLinkedList (a, b){
 //   let number_a  = "";
@@ -146,31 +100,7 @@
 // b = {"val":5,"next":{"val":6,"next":{"val":4,"next":{"val":9,"next":null}}}}
 // console.log(addLinkedList(a, b))
 
-// const reverse = function (x) {
-//   let str = x + "";
 
-//   let reversed = str.split("").reverse();
-
-//   let y = reversed.join("");
-//   // let check1 =  parseInt(y);
-//   let check = parseInt(y)
-
-//   if (check > Math.pow(2, 31)) {
-//     return 0;
-//   } else {
-//     return parseInt(y) * Math.sign(x);
-//   }
-// };
-
-// function reverseInt(int){
-//   const intRev = int.toString().split('').reverse().join('');
-//   console.log("rev", intRev);
-//   return parseInt(intRev) * Math.sign(int);
-// }
-
-// console.log("reversed", reverse(-123));
-// console.log("reversed", reverse(-2147483648));
-// console.log("reversed", reverse(1534236469));
 
 // let isUser = true
 
@@ -206,57 +136,18 @@
 // let user = {
 //   karma: 10,
 //   isModerator: true,
-//   hasEnoughKarma: "",
+//   hasEnoughKarma: false,
 //   canUpVote: "Can't upVote"
 // }
 
 // user.karma >= 100 ? user.hasEnoughKarma = true : user.hasEnoughKarma
-// user.hasEnoughKarma >= 100 || user.isModerator ? user.canUpVote = "user can upVote": user.canUpVote
+// user.hasEnoughKarma || user.isModerator ? user.canUpVote = "user can upVote": user.canUpVote
 
 // console.log("canUpVote", user.canUpVote);
 
-// function electionsWinners(votes, k) {
-//   let arr = [];
 
-//   let maxVote = Math.max(...votes);
 
-//   for (let j = 0; j < votes.length; j++) {
-//     if (votes[j] + k == maxVote) {
-//       return "there is a possibility for a tie";
-//     } else if (votes[j] + k > maxVote) {
-//       arr.push(votes[j]);
-//     }
-//   }
 
-//   return arr.length + "person(s) can win the elction";
-// }
-
-// console.log(electionsWinners([2, 3, 5, 2], 1));
-
-// const checkPrime = () => {
-//   let prime = [];
-//   let checkNum = [2, 3, 5, 7, 11];
-
-//   for (let num = 3; num < 50; num++) {
-//     let isPrime = true
-//     // if (!checkNum.some(check => num % check === 0 && num !== check)) {
-//     //   prime.push(num)
-//     // }
-
-//     for (let i = 0; i< checkNum.length; i++) {
-//       if (num % checkNum[i] === 0 && num !== checkNum[i])  {
-//         isPrime = false
-//         break;
-//       }
-//     }
-//     if (isPrime) {
-//       prime.push(num)
-//     }
-//   }
-//   console.log(prime)
-// };
-
-// checkPrime()
 
 // const divide = function (dividend, divisor) {
 //   let a = Math.abs(dividend);
@@ -280,20 +171,9 @@
 // // console.log("divide", divide(-1, 1));
 // console.log("divide", divide(-2147483648, -1));
 
-// const isPalindrome = function(x) {
-//     let str = x + ""
-//   console.log("str", Number(str.split("").reverse().join("")));
-//     if (str.split("").reverse().join("") === x + ""){
-//       return true
-//     } else {
-//       return false
-//     }
 
 
 
-// };
-
-// console.log("res", isPalindrome(-979));
 
 
 // let bracket = "((())"

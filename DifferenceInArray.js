@@ -7,39 +7,52 @@
 // console.log(difference([1, 2, 3], [100, 2, 1, 10]));
 // ["3", "10", "100"]
 
-const arrDiff = (arr1, arr2) => {
-  common = [];
-  merged = arr1.concat(arr2)
-  // result = []
+let result1 = [];
+
+const unfold = (expectedArray1) => {
 
 
-  let result = arr2.filter(x => arr1.indexOf(x) === -1);
-//   for (i = 0; i < arr1.length; i++) {
+  expectedArray1.forEach((child) => {
+    if (Array.isArray(child)) {
+      unfold(child);
+    } else {
+      result1.push(child);
+    }
+  });
 
-//     for(t=0; t<arr2.length; t++){
-//         if (arr1[i] == arr2[t]){
-//             common.push(arr1[i])
-//         }
-//     }
-//   }
-
-//   for (j=0; j<merged.length; j++){
-//     for (k=0; k<merged.length; k++){
-//       if (merged[j] == common[k]){
-//         merged[j] = null
-//       }
-//     }
-//   }
-
-//  merged.map(a => {
-//   if (a){
-//     result.push(a)
-//   }
-// })
-
-return result
+  // return console.log("result1", result1);
 };
 
-console.log("This is result", arrDiff([1, 2, 3], [100, 2, 1, 10]));
-console.log("This is result", arrDiff([1, 2, 3, 4, 5], [1, [2], [3, [[4]]],[5,6]]));
+let result2 = [];
+const unfold2 = (expectedArray2) => {
+  expectedArray2.forEach((child2) => {
+    if (Array.isArray(child2)) {
+      unfold2(child2);
+    } else {
+      result2.push(child2);
+    }
+  });
 
+  let longest =
+    result1.length >= result2.length ? result1.length : result2.length;
+  let newArr = [];
+  for (i = 0; i < longest; i++) {
+    let check = result1.indexOf(result2[i]);
+
+    if (check < 0) {
+      newArr.push(result2[i]);
+    }
+  }
+
+  return console.log(newArr);
+};
+
+const arrDiff = (arr1) => {
+  return unfold(arr1);
+};
+const arrDiff2 = (arr2) => {
+  return unfold2(arr2);
+};
+
+arrDiff([1, 2, 3, 4, 5]);
+arrDiff2([1, [2], [3, [[4]]], [5, 6]]);

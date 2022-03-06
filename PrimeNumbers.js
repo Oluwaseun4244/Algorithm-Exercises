@@ -16,9 +16,14 @@ const checkPrime = () => {
       }
       if (isPrime) {
         prime.push(num)
+        if (num > 11){
+          checkNum.push(num)
+        }
       }
     }
     console.log(prime)
   };
   
   checkPrime()
+
+
